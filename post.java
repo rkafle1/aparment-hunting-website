@@ -19,15 +19,28 @@ public class post {
         likes += 1;
         return likes;
     }
+    public int takelike(){
+        likes -= 1;
+        return likes;
+    }
     public int adddislike(){
         dislikes += 1;
         return dislikes;
     }
+    public int takedislike(){
+        dislikes -= 1;
+        return dislikes;
+    }
+
     public List<String> addcomment(String comment){
         comments.add(comment);
         return comments;
     }
-
+    public List<String> deleteComment(String comment){
+        comments.remove(comment);
+        return comments;
+    }
+// test for methods
     public static void main(String[] args){
         post p1 = new post("this is a house", "this is a description");
         p1.addlike();
@@ -35,6 +48,7 @@ public class post {
         p1.addlike();
         p1.addcomment("this sucks, find a new one. ");
         p1.addcomment("this is fine");
+        p1.deleteComment("this is fine");
         System.out.println(p1.Content+p1.Discription+p1.likes + p1.dislikes+ p1.comments);
     }
 
